@@ -1,4 +1,4 @@
-/*Q74: Find the transpose of a matrix.
+/*Q74: Find the transpose of a matrix(rows -> column and column -> row).
 
 Sample Test Cases:
 Input 1:
