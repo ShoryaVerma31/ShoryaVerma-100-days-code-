@@ -1,7 +1,5 @@
+/*Q101: Write a Program to take a sorted array(say nums[]) and an integer (say target) as inputs. The elements in the sorted array might be repeated. You need to print the first and last occurrence of the target and print the index of first and last occurrence. Print -1, -1 if the target is not present.
 
-Q101: Write a Program to take a sorted array(say nums[]) and an integer (say target) as inputs. The elements in the sorted array might be repeated. You need to print the first and last occurrence of the target and print the index of first and last occurrence. Print -1, -1 if the target is not present.
-
-/*
 Sample Test Cases:
 Input 1:
 nums = [5,7,7,8,8,10], target = 8
@@ -24,11 +22,28 @@ Output 3:
 
 int findfirst(int num[], int n, int target){
     int start=0, end=n-1, result=-1;
-    while(start < end){
+    while(start <= end){
         int mid = (start + end)/2;
         if(num[mid] == target){
             result = mid;
             end = mid -1; // search left in num
+        }
+        else if(num[mid] < target){
+            start = mid + 1;
+        }
+        else{
+            end = mid - 1;
+        }
+    }
+    return result;
+} 
+int findlast(int num[], int n, int target){
+    int start=0, end=n-1, result=-1;
+    while(start <= end){
+        int mid = (start + end)/2;
+        if(num[mid] == target){
+            result = mid;
+            start = mid +1; // search right in num
         }
         else if(num[mid] < target){
             start = mid + 1;
@@ -51,10 +66,10 @@ int main(){
     for(int i=0; i<n; i++){
         printf("%d ",num[i]);
     }
-    printf("Enter the target : \n");
+    printf("\nEnter the target : ");
     scanf("%d",&target);
 
-    printf("%d",findfirst(num, n, target));
+    printf("%d %d",findfirst(num, n, target),findlast(num, n, target));
 
     return 0;
 }
