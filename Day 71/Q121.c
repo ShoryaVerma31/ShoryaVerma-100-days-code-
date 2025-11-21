@@ -25,10 +25,11 @@ int main(){
     // content to be shown inside the file (info.txt)
 
     fprintf(ptr,"Name: %s",name);
-    fprintf(ptr,"%c",'\n');
     fprintf(ptr,"Age: %d",age);
-    fprintf(ptr,"%c",'\n');
+   
 
     printf("File created successfully! Data written to info.txt\n");
+    fclose(ptr);
+    
     return 0;
 }
