@@ -12,7 +12,8 @@ Average = 30.00
 #include<stdio.h>
 
 int main(){
-    int num1, num2, num3, num4, num5;
+    int num, sum=0, count=0;
+    float avg =0.0;
 
     FILE *ptr;
     ptr = fopen("numbers.txt", "r");
@@ -22,11 +23,17 @@ int main(){
         return 1;
     }
 
-    fscanf(ptr, "%d %d %d %d %d", &num1, &num2, &num3, &num4, &num5);
-    printf("Sum: %d\n", (num1 + num2 + num3 + num4 + num5) );
-    printf("Average: %.2f\n", (float)((num1 + num2 + num3 + num4 + num5)/5.0) );
-    
-    fclose(ptr);
+    while(fscanf(ptr, "%d", &num ) == 1){
+        sum += num;
+        count++;
+    }
 
+    printf("Sum: %d\n", sum);
+    
+    if(count > 0){
+      avg =(float)sum/count;
+    }
+    printf("Average: %.2f\n", avg);
+    fclose(ptr); 
     return 0;
 }    
