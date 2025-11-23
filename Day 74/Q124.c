@@ -36,7 +36,7 @@ int main(){
         return 1;
     }
     if(ptr2 == NULL){
-        printf("Error! file connot create destination file\n");
+        printf("Error! cannot create destination file\n");
         return 1;
     }
    

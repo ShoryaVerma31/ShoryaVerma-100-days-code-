@@ -26,7 +26,7 @@ int main(){
         return 1;
     }
     if(ptr2 == NULL){
-        printf("Error! file connot create output.txt file\n");
+        printf("Error! cannot create output.txt file\n");
         return 1;
     }
 
@@ -36,6 +36,6 @@ int main(){
     
     fclose(ptr1);
     fclose(ptr2);
-    
+
     return 0;
 }
