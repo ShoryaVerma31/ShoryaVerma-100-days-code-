@@ -35,9 +35,9 @@ int main(){
     }
 
     switch(p.gender){
-        case MALE : printf("MALE\n"); break;
-        case FEMALE : printf("FEMALE\n"); break;
-        case OTHER : printf("OTHER\n"); break;
+        case MALE : printf("Male\n"); break;
+        case FEMALE : printf("Female\n"); break;
+        case OTHER : printf("Other\n"); break;
     }
     return 0;
 }
