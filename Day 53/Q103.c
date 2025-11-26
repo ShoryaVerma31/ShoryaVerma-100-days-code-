@@ -22,3 +22,39 @@ Output 3:
 0
 
 */
+
+#include<stdio.h>
+
+int main(){
+    int arr[50];
+    int n; 
+    int total_sum=0, left_sum=0, right_sum=0;
+
+    printf("Enter the no. of elements in the array: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements in the array: ");
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+        total_sum += arr[i];
+
+    }
+
+    int pivot = -1;
+
+    for(int i = 0; i < n; i++){ 
+        
+        right_sum = total_sum - left_sum - arr[i];   
+
+        if(right_sum == left_sum){
+            pivot = i;
+            break;
+        }
+
+        left_sum += arr[i];
+    }
+ 
+    printf("%d", pivot);
+    
+    return 0;
+}
